@@ -9,14 +9,21 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-community/datetimepicker": "6.2.0",
     "@shoutem/ui": "^6.0.0",
     "expo": "~47.0.3",
     "expo-status-bar": "~1.4.2",
+    "lottie-ios": "3.4.0",
+    "lottie-react-native": "5.1.4",
     "react": "18.1.0",
-    "react-native": "0.70.5"
+    "react-native": "0.70.5",
+    "react-native-device-info": "9.0.2",
+    "react-native-linear-gradient": "2.6.2",
+    "react-native-svg": "12.3.0",
+    "react-native-webview": "11.23.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.19.3"
   },
   "private": true
 }

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "506292263612",
+    "project_id": "vision-time-plan",
+    "storage_bucket": "vision-time-plan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506292263612:android:4c27004c283612d1e50eb9",
+        "android_client_info": {
+          "package_name": "com.logikcube.vision"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506292263612-gmkno7p2ukhchdnbjtgr7jovjv7ck3om.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcPaSymL828w1Ew7MlSE80R0btKkoX1LU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506292263612-gmkno7p2ukhchdnbjtgr7jovjv7ck3om.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "506292263612-9hegjgrvo4ff6347be1haitvrojv4jac.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.logikcube.vision"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

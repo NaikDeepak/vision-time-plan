@@ -14,6 +14,8 @@ import {
 import theme from "../config/theme";
 import buttonStyles from "../config/buttons";
 import inputStyles from "../config/inputs";
+import { useDispatch } from "react-redux";
+import { SignUp } from "../firebase/user";
 
 const RegisterScreen = ({ navigation }) => {
   const [userEmail, setUserEmail] = useState("");
@@ -24,6 +26,7 @@ const RegisterScreen = ({ navigation }) => {
 
   const passwordInputRef = createRef();
   const emailInputRef = createRef();
+  const dispatch = useDispatch();
 
   const handleSubmitPress = () => {
     setErrortext("");
@@ -40,11 +43,12 @@ const RegisterScreen = ({ navigation }) => {
       return;
     }
     setLoading(true);
-    let dataToSend = {
+    let user = {
       userName: userName,
       email: userEmail,
       password: userPassword,
     };
+    SignUp(dispatch, user);
   };
 
   return (

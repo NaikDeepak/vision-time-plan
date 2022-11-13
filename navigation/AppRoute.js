@@ -5,7 +5,9 @@ import AuthNavigator from "./AuthNavigator";
 import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../redux/slices/authSlice";
 
-const AppRoute = () => {
+const AppRoute = ({ user }) => {
+  //TODO : remove below console.log later , using it for testing
+  console.log("User", user);
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <NavigationContainer>

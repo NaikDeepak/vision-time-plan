@@ -12,9 +12,13 @@ import OnBoardingStackNavigator from "./stack-navigators/OnBoardingStackNavigato
 import theme from "../config/theme";
 import SponsorsStackNavigator from "./stack-navigators/SponsorsStackNavigator";
 
+import { SignOut } from "../firebase/user";
+import { useDispatch } from "react-redux";
+
 const Drawer = createDrawerNavigator();
 
 const CustomDrawerContent = (props) => {
+  const dispatch = useDispatch();
   return (
     <DrawerContentScrollView {...props}>
       {Object.entries(props.descriptors).map(([key, descriptor], index) => {
@@ -40,6 +44,16 @@ const CustomDrawerContent = (props) => {
           />
         );
       })}
+      <View style={styles.bottomMenu}>
+        <Text
+          style={styles.signOutText}
+          onPress={() => {
+            SignOut(dispatch);
+          }}
+        >
+          Sign Out
+        </Text>
+      </View>
     </DrawerContentScrollView>
   );
 };
@@ -143,6 +157,14 @@ const styles = StyleSheet.create({
   },
   drawerItemFocused: {
     backgroundColor: theme.COLORS.PRIMARY_MUTED,
+  },
+  signOutText: {
+    fontSize: 14,
+  },
+  bottomMenu: {
+    borderTopColor: theme.COLORS.GREY,
+    borderTopWidth: 1,
+    padding: 15,
   },
 });
 

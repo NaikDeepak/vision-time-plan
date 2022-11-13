@@ -11,6 +11,9 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 
+import { useDispatch } from "react-redux";
+import { SignIn } from "../firebase/user";
+
 import theme from "../config/theme";
 import buttonStyles from "../config/buttons";
 import inputStyles from "../config/inputs";
@@ -22,6 +25,8 @@ const SignInScreen = ({ navigation }) => {
   const [errortext, setErrortext] = useState("");
 
   const passwordInputRef = createRef();
+
+  const dispatch = useDispatch();
   const handleSubmitPress = () => {
     setErrortext("");
     if (!userEmail) {
@@ -33,7 +38,8 @@ const SignInScreen = ({ navigation }) => {
       return;
     }
     setLoading(true);
-    let dataToSend = { email: userEmail, password: userPassword };
+    let user = { isLoggedIn: true, email: userEmail, password: userPassword };
+    SignIn(dispatch, user);
   };
 
   return (

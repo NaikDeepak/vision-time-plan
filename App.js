@@ -1,14 +1,16 @@
+import "expo-dev-client";
+
 import React, { useEffect, useState, useCallback } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import {
-  StyleSheet,
-} from "react-native";
+import { StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Provider } from "react-redux";
 import AppRoute from "./navigation/AppRoute";
 import { store } from "./redux/store";
 import { GalioProvider } from "galio-framework";
+
+import auth from "@react-native-firebase/auth";
 
 const customTheme = {
   SIZES: { BASE: 18 },
@@ -18,6 +20,17 @@ const customTheme = {
 };
 
 const App = () => {
+  const [user, setUser] = useState();
+  // Handle user state changes
+  function onAuthStateChanged(user) {
+    setUser(user);
+  }
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
+
   const [fontsLoaded] = useFonts({
     "Poppins-Black": require("./assets/fonts/Poppins-Black.ttf"),
     "Poppins-Bold": require("./assets/fonts/Poppins-Bold.ttf"),
@@ -42,7 +55,8 @@ const App = () => {
     <>
       <Provider store={store}>
         <GalioProvider theme={customTheme}>
-          <AppRoute />
+          {/* <AppRoute user={user} /> */}
+          <AppRoute user={user} />
           <StatusBar style="auto" />
         </GalioProvider>
       </Provider>

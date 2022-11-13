@@ -27,14 +27,14 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.logo} source={images.logo1x} />
+      <Image style={styles.logo} source={images.splash3x} />
 
       <View style={styles.textContainer}>
-        <Text style={styles.welcomeText}>Welcome to Tigerland</Text>
+        <Text style={styles.welcomeText}>Vison Time Plan</Text>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
-          onPress={handleLogin}
+          onPress={handleNavigation}
           style={{
             ...buttonStyles.buttonPrimary,
             ...buttonStyles.buttonEmailStyle,
@@ -50,23 +50,7 @@ const LoginScreen = () => {
           />
           <Text style={buttonStyles.buttonTextStyle}> Login With Email</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...buttonStyles.buttonPrimary,
-            ...buttonStyles.buttonFacebookStyle,
-            ...buttonStyles.shadow,
-          }}
-          activeOpacity={0.5}
-        >
-          <Icon
-            name="facebook"
-            family="MaterialCommunityIcons"
-            size={theme.SIZES.BASE * 1.75}
-            color={theme.COLORS.WHITE}
-            style={buttonStyles.buttonImageIconStyle}
-          />
-          <Text style={buttonStyles.buttonTextStyle}>Login With Facebook</Text>
-        </TouchableOpacity>
+
         <TouchableOpacity
           style={{
             ...buttonStyles.buttonPrimary,
@@ -74,7 +58,7 @@ const LoginScreen = () => {
             ...buttonStyles.shadow,
           }}
           activeOpacity={0.5}
-          onPress={handleNavigation}
+          onPress={handleLogin}
         >
           <Icon
             name="google"
@@ -107,7 +91,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.COLORS.WHITE,
   },
   logo: {
-    marginTop: 50,
+    marginTop: 100,
   },
   buttonContainer: {
     flex: 1,

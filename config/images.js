@@ -2,8 +2,9 @@
  * @providesModule Images
  */
 const images = {
-  logo1x: require("../assets/images/logo-1x.png"),
-  logo2x: require("../assets/images/logo-2x.png"),
-  logo3x: require("../assets/images/logo-3x.png"),
+  logo: require("../assets/splash.png"),
+  splash1x: require("../assets/images/splash1x.png"),
+  splash2x: require("../assets/images/splash2x.png"),
+  splash3x: require("../assets/images/splash3x.png"),
 };
 export default images;

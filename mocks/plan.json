@@ -1,0 +1,5 @@
+{
+  "name": "some name",
+  "id": "some id",
+  "processes": [{ "id": "pId", "name": "pName", "WoNo": "wono11", "plan": [] }]
+}

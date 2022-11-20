@@ -11,6 +11,7 @@ import BottomTabNavigator from "./BottomTabNavigator";
 import OnBoardingStackNavigator from "./stack-navigators/OnBoardingStackNavigator";
 import theme from "../config/theme";
 import SponsorsStackNavigator from "./stack-navigators/SponsorsStackNavigator";
+import ProductStackNavigator from "./stack-navigators/ProductStackNavigator";
 
 import { SignOut } from "../firebase/user";
 import { useDispatch } from "react-redux";
@@ -111,6 +112,14 @@ const DrawerNavigator = () => {
           headerTitle: () => (
             <Text style={styles.headerTitle}>Our Sponsors</Text>
           ),
+        }}
+      />
+      <Drawer.Screen
+        name="ProductStack"
+        component={ProductStackNavigator}
+        options={{
+          title: "Product List",
+          headerTitle: () => <Text style={styles.headerTitle}>Products</Text>,
         }}
       />
 
